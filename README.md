@@ -10,4 +10,4 @@ Installation:
 
 Usage:
 ======
-`python test_reports.py`
+`nosetests -v test_reports.py`

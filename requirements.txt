@@ -1,2 +1,4 @@
 bok-choy
 beautifulsoup4
+ddt
+nose
