@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from bok_choy.page_object import PageObject
+from bok_choy.promise import EmptyPromise
 from bs4 import BeautifulSoup
 from pdb import set_trace
 
@@ -26,6 +27,18 @@ class TenonIoTestNowPage(PageObject):
         CodeMirror.signal(cm, "blur", cm);
         """
         self.browser.execute_script(script, str(text))
+        # Wait for the text to be displayed.
+        EmptyPromise(lambda: self._is_text(text), "Text matches").fulfill()
+
+    def _is_text(self, text):
+        """
+        Get the text into the CodeMirror input block
+        Return True if it matches what was expected
+        """
+        script = """
+        return $('div.CodeMirror').get(0).CodeMirror.getValue();
+        """
+        return self.browser.execute_script(script) == text
 
     def submit_data(self, text):
         """
