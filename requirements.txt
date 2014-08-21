@@ -1,4 +1,3 @@
-bok-choy
-beautifulsoup4
+requests
 ddt
 nose
