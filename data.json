@@ -1,14 +1,9 @@
 {
-  "www.google.com": {
-    "url" : "https://www.google.com",
-    "total": 9,
-    "errors": 9,
-    "warnings": 0
-  },
-  "www.github.com": {
-    "url" : "https://www.github.com",
-    "total": 15,
-    "errors": 11,
-    "warnings": 4
+  "www.edx.org": {
+    "url" : "https://www.edx.org",
+    "grade": "F",
+    "totalIssues": 22,
+    "totalWarnings": 8,
+    "totalErrors": 14
   }
 }
